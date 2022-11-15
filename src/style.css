@@ -1,7 +1,137 @@
-body {
-  background-color: bisque;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hello {
-  color: red;
+:root {
+  --primary-color: #eee;
+  --secondary-color: #000;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================*\
+        Header
+\*========================= */
+
+header {
+  height: 10vh;
+  width: 100%;
+  padding: 2rem;
+}
+
+header h1 {
+  font-size: 4rem;
+}
+
+/* =========================*\
+        Main
+\*========================= */
+main {
+  width: 100%;
+  height: 90vh;
+  max-width: 1200px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 50px;
+  padding: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wrapper .show-score {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 500px;
+  flex-basis: 100%;
+}
+
+.wrapper .show-score .head-score {
+  display: flex;
+  padding: 2rem;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.wrapper .add-score h3 {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+
+.wrapper .show-score .head-score h3 {
+  font-size: 3rem;
+}
+
+.wrapper .show-score .head-score button {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.wrapper .show-score .list-score {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid var(--secondary-color);
+  min-height: 200px;
+}
+
+.wrapper .show-score .list-score li {
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.wrapper .show-score .list-score li:nth-child(even) {
+  background-color: var(--primary-color);
+}
+
+/* Add score */
+.wrapper .add-score {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 20px;
+  max-width: 300px;
+  flex-basis: 100%;
+}
+
+.wrapper .add-score form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+
+.wrapper .add-score form input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--secondary-color);
+}
+
+.wrapper .add-score form .submit-btn {
+  text-align: end;
+}
+
+.wrapper .add-score form .submit-btn button {
+  padding: 1rem;
+  border: 2px solid var(--secondary-color);
+  cursor: pointer;
 }

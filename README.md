@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Webpack
+# LeaderBoard
 
-> This is a boilerplate webpack that can be used as a starting point for projects.
+> This is a project that uses API to send user scores and show them
 
 
 ## Built With
@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 
 Clone this repository by using the command line : 
-`git clone https://github.com/wassimchakib/Webpack.git`
+`git clone https://github.com/wassimchakib/leaderboard.git`
 
 ### Install
 
