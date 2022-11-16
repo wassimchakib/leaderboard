@@ -28,6 +28,9 @@ Clone this repository by using the command line :
 
 ### Deployment
 
+### Live Demo
+For the live version, [click here](https://wassimchakib.github.io/leaderboard/)
+
 
 
 ## Authors
