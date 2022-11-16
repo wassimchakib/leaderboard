@@ -10,7 +10,7 @@ const submitForm = (e) => {
   const score = e.target.score.value;
 
   if (checkInput(user) && checkInput(score)) {
-    API.sendGame({ user, score }).then((data) => {
+    API.sendGame({ user: user.trim(), score }).then((data) => {
       if (data.result === 'Leaderboard score created correctly.') {
         spanSuccess.textContent = 'Your score was added successfully';
         spanSuccess.classList.add('success');
@@ -23,29 +23,34 @@ const submitForm = (e) => {
         spanSuccess.classList.add('error');
         // Make text disappear after 3 seconds
         setTimeout(() => {
-          spanSuccess.classList.add('error');
+          spanSuccess.classList.remove('error');
         }, 3000);
       }
     });
+    form.reset();
+  } else {
+    spanSuccess.textContent = 'Cannot submit an empty text / score, please try again';
+    spanSuccess.classList.add('error');
+    // Make text disappear after 3 seconds
+    setTimeout(() => {
+      spanSuccess.classList.remove('error');
+    }, 3000);
   }
-  form.reset();
 };
 
 const retrieveAndShowScores = () => {
   const listScore = document.querySelector('.list-score');
   API.retrieveScoreGame().then((result) => {
-    result.forEach((game) => {
-      const listItem = document.createElement('li');
-      listItem.textContent = `${game.user}: ${game.score}`;
-      listScore.append(listItem);
-    });
+    const array = result
+      .sort((a, b) => b.score - a.score)
+      .map((game, index) => `<li><span class="ranking">${index + 1}</span><span class="username">${game.user}</span><span class="score">${game.score}</span></li>`);
+    listScore.innerHTML = array.join('');
   });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('.add-score form');
   const refreshBtn = document.querySelector('.head-score button');
-
   form.addEventListener('submit', submitForm);
   refreshBtn.addEventListener('click', retrieveAndShowScores);
 });
