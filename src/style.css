@@ -229,4 +229,7 @@ main {
   .wrapper .show-score {
     height: 50%;
   }
+  .wrapper .show-score {
+    order: 2;
+  }
 }
