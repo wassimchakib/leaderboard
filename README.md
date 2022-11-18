@@ -2,7 +2,7 @@
 
 # LeaderBoard
 
-> This is a project that uses API to send user scores and show them
+> The template serves for saving game scores and sorting it by the highest ones using API
 
 
 ## Built With
@@ -29,7 +29,7 @@ Clone this repository by using the command line :
 ### Deployment
 
 ### Live Demo
-For the live version, [click here](https://wassimchakib.github.io/leaderboard/)
+For the live version, [click here](https://wassimchakib.github.io/leaderboard/dist)
 
 
 
